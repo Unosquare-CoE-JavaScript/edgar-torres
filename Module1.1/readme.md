@@ -22,11 +22,11 @@ The former is a primitive string literal.
 
 Besides primitives, there are also object values like arrays and objects:
 
-{screenshot 2}
+<img width="356" alt="screenshot 2" src="https://user-images.githubusercontent.com/108761141/180851694-2d648afa-f6c9-4ea5-9047-81ee90135565.png">
 
 Function in JS are a special type of the object value type. Not all languages treat functions as values but it’s essential for a language to support the functional programming pattern as JS does.
 
-{screenshot 3}
+<img width="238" alt="screenshot 3" src="https://user-images.githubusercontent.com/108761141/180851701-81664030-efdd-4a0f-acb5-af32e2a14923.png">
 
 - [ ] How we organise in JS:
       Two major patterns for organising code (data and behaviour) are used broadly across the JS ecosystem: classes and modules.
@@ -35,18 +35,18 @@ When it comes to classes, the terms “object-oriented”, “class-oriented”,
 
 Consider the following example of a class:
 
-{screenshot 4}
+<img width="387" alt="screenshot 4" src="https://user-images.githubusercontent.com/108761141/180851708-d8524f97-8f6b-46ca-93fc-bc2941e85893.png">
 
 - [ ] Class inheritance: useful for code reusability by reusing properties and methods of an existing class when you create a new class
       To create a class inheritance, use the extends keyword.
       super() refers to a parent class. We call the parent’s constructor method and gets access to the parent’s properties and methods.
 
-{screenshot 5}
+<img width="598" alt="screenshot 5" src="https://user-images.githubusercontent.com/108761141/180851734-7b8f4f50-6f4a-45e1-9c9b-4717713f408f.png">
 
 Classic modules:
 An outer function that runs at least once, which returns an instance of the module with the one or more functions exposed that an operate on the module instance’s internal (hidden) data.
 
-{screenshot 6}
+<img width="385" alt="screenshot 6" src="https://user-images.githubusercontent.com/108761141/180851749-3d15da62-147a-4ea4-862d-0b7ef8ebabed.png">
 
 ES Modules:
 These are meant to serve much the same spirit and purpose as the existing classic modules. The difference is that there is no wrapping function to define a module; the wrapping context is a file, one file; one module. Also you don’t interact with a module’s “API” explicitly but rather use the export keyword to add a variable or method to its public API definition. If something is defined in a module but not exported, then it stays hidden. Lastly, you don’t “instantiate” an ES module, you just import it to use its single instance.
