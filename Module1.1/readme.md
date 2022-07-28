@@ -1,4 +1,4 @@
-# JS YDKJSYT
+# JS YDKJSY
 
 ## Chapter 1: About JS
 
@@ -78,4 +78,18 @@ Functions have a characteristic besides their scope that influences what they cn
 
 ## Chapter 4: The bigger picture
 
+### Scope and closure:
+
+Essentially JS is lexically scoped because of two particular characteristics of its model that are not present in other lexically scoped languages. The first is hoisting: when all variables declared anywhere in a scope are treated as if they're declared at the beginning of the scope. It's worth mentioning let and const have a peculiar error behavior called "temporal dead zone" which results in observable but unusable variables. The second one is closure: a natural result of lexical scope when the language has functions as first-class values. When a function makes reference to variables from an outer scope, and that function is passed around as a value and executed in other scopes, it maintains access to its original scope variables; this is closure. 
+
+### Types and coercion:
+
+JS devs should learn more about types and should learn more about how JS manages type conversions, which is ofter overlooked by the community. Yet, this doesn't make JS bad at all. 
+
+Type coercion can be explicit and implicit. When a dev expresses the intention to convert between types by writing specific code, like Number(value), it's called explicit type coercion. Since JS is a weakly-typed language, values can also be converted between different types automatically and it is called implicit type coercion. The latter usually happens when you apply operators to values of different types like 
+1 == null, 2/'5', null + new Date(). 
+
+<img width="435" alt="Screenshot 2022-07-28 at 1 30 25 PM" src="https://user-images.githubusercontent.com/108761141/181612053-f9040e6b-7a16-49f0-beb9-e45971363af3.png">
+
+### This should mark the end of first JS book. Text and sentences have been paraphrased in order to allow further visits for a solid grasp. 
 
