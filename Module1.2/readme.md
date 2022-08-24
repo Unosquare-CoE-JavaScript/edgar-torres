@@ -41,7 +41,7 @@ It should be clear that scope is determined as the program is compiled and shoul
 
 One metaphor that can be found effective in understanding scope is sorting colored marbles into buckets of their matching color. In this metaphor, the marbles are the variables and the buckets are scopes (functions and blocks).
 
-{Graphic example}
+<img width="423" alt="scope illus" src="https://user-images.githubusercontent.com/108761141/186535225-3f22134b-9dcd-4d4e-8a3e-85a5020c5208.png">
 
 Scope bubbles are determined during compilation based on where the functions/blocks of scope are written, the nesting inside each other and so on. Each scope bubble is entirely container within its parent scope bubble--a scope is never partially in two different outer scopes.
 
