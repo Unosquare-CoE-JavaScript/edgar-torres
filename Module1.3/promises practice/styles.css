@@ -1,0 +1,35 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(42, 42, 42) 
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn {
+    position: relative;
+    width: 170px;
+    height: 85px;
+    border: 1px #ebeb23 groove;
+    border-radius: 3px;
+    background-color: rgb(42, 39, 39);
+    color: white;
+    transition: 0.5s;
+    font-size: 1.5em;
+}
+.btn:hover {
+    box-shadow: 0 0 35px #ebeb23;
+}
+.btn:active {
+    transform: scale(0.70);
+}
