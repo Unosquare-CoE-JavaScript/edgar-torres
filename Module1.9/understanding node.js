@@ -210,3 +210,99 @@ PHP and Python. Node was built especifically to work with async non-blocking I/O
 */
 
 //
+
+// Creating an express app -- note taking version //
+
+const express = require("express");
+const app = express();
+app.listen(3000);
+
+app.get("/", (req, res) => {
+  res.sendFile("./views/index.html", { root: __dirname });
+});
+
+app.get("/", (req, res) => {
+  res.sendFile("./views/about.html", { root: __dirname });
+});
+
+// redirects & 404 page
+
+app.get("/about-us", (req, res) => {
+  res.redirect("/about");
+});
+
+app.use((req, res) => {
+  //this use method uses this function for every incoming requests, similar to a catch. It goes at the end.
+  res.status(404).sendFile("./views/404.html", { root: __dirname });
+});
+
+// Middleware: Code which runs (on the server) between getting a request and sending a response. They run from top to bottom. For example: //
+
+app.use(func);
+
+/* 
+Middleware Examples:
+- Logger middleware to log details of every request
+- Authentication check middleware for protected routes
+- Middleware to parse JSON data from requests
+- Return 404 pages
+*/
+
+// Request types: GET & POST //
+
+app.get("/blogs", (req, res) => {
+  Blog.find()
+    .sort({ createdAt: -1 })
+    .then((result) => {
+      res.render("index", { title: "All blogs", blogs: result });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
+
+app.use(express.urlencoded({ extended: true })); //this is a middleware
+
+app.post("/blogs", (req, res) => {
+  const blog = new Blog(req.body);
+
+  blog // saves to DB
+    .save()
+    .then((result) => {
+      res.redirect("/blogs");
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
+
+// Route parameter: a value that can change. For example (using express and router): //
+const express = require('express');
+const router = express.Router();
+
+router.get("/blogs/:id", (req, res) => {  // router would replace app
+  const id = req.params.id;
+  Blog.findById(id)
+    .then((result) => {
+      render("details", { blog: result, title: "Blog details" });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
+
+module.exports = router;
+
+// MVC Basics //
+/* 
+- Model, View, Controller; it's a way of structuring code and files
+- Keeps code more modular, reusable and easier to read
+- Model: how we describe our data structure and use them to interact with databases
+- Views: Where I make HTML templates
+- Controller: forms a link between model and view, it's a middle man. I can use it to store the logic in my app and reference to them from other modules
+
+For example, instead of what I did before, I could sum everything up like so:
+*/
+
+router.get('/', blogController.blog_index); // the second argument is stored inside controllers, I'm just pointing there to call it. It's much cleaner now!
+
